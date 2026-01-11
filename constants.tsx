@@ -3,9 +3,10 @@ import React from 'react';
 import { Job } from './types';
 
 export const COLORS = {
-  primary: '#0ea5e9', // Sky 500
-  secondary: '#10b981', // Emerald 500
-  accent: '#f59e0b', // Amber 500
+  primary: '#2563eb',   // Azul 600
+  secondary: '#16a34a', // Verde 600
+  accent: '#475569',    // Cinza 600 (Slate)
+  background: '#020617' // Cinza 950 (Slate)
 };
 
 export const MOCK_JOBS: Job[] = [

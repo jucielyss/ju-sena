@@ -28,7 +28,7 @@ const JobList: React.FC<JobListProps> = ({ jobs, onSelectJob }) => {
           onClick={() => onSelectJob(job)}
           className="w-full text-left bg-slate-900 p-4 rounded-xl shadow-sm border border-slate-800 flex gap-4 active:bg-slate-800 transition-colors"
         >
-          <div className="h-12 w-12 bg-sky-900/20 rounded-lg flex items-center justify-center text-sky-500 shrink-0">
+          <div className="h-12 w-12 bg-blue-900/20 rounded-lg flex items-center justify-center text-blue-500 shrink-0">
             {job.companyType === 'market' && <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>}
             {job.companyType === 'restaurant' && <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2M7 2v20M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3z" /></svg>}
             {job.companyType === 'bakery' && <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 18V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2zM14 18h7a2 2 0 002-2v-4a2 2 0 00-2-2h-7" /></svg>}
@@ -39,7 +39,7 @@ const JobList: React.FC<JobListProps> = ({ jobs, onSelectJob }) => {
             <h3 className="font-bold text-slate-100 truncate">{job.title}</h3>
             <p className="text-sm text-slate-500 truncate">{job.company}</p>
             <div className="flex items-center gap-3 mt-2">
-               <span className="text-xs font-bold text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded">{job.salary}</span>
+               <span className="text-xs font-bold text-green-400 bg-green-950/40 px-2 py-0.5 rounded">{job.salary}</span>
                <span className="text-xs text-slate-600">• {job.distance}km de você</span>
             </div>
           </div>

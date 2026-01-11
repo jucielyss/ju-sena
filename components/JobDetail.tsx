@@ -14,7 +14,7 @@ interface JobDetailProps {
 const JobDetail: React.FC<JobDetailProps> = ({ job, isApplied, isSaved, onClose, onApply, onToggleSave }) => {
   return (
     <div className="absolute inset-0 bg-slate-950 z-50 flex flex-col animate-in slide-in-from-bottom-full duration-300">
-      <div className="relative h-48 bg-sky-600 flex items-center justify-center overflow-hidden">
+      <div className="relative h-48 bg-blue-600 flex items-center justify-center overflow-hidden">
         <button 
           onClick={onClose}
           className="absolute top-6 left-4 bg-black/20 backdrop-blur-md p-2 rounded-full text-white active:bg-black/40"
@@ -23,7 +23,7 @@ const JobDetail: React.FC<JobDetailProps> = ({ job, isApplied, isSaved, onClose,
         </button>
         <button 
           onClick={onToggleSave}
-          className={`absolute top-6 right-4 p-2 rounded-full backdrop-blur-md transition-all ${isSaved ? 'bg-amber-500 text-white' : 'bg-black/20 text-white active:bg-black/40'}`}
+          className={`absolute top-6 right-4 p-2 rounded-full backdrop-blur-md transition-all ${isSaved ? 'bg-green-600 text-white' : 'bg-black/20 text-white active:bg-black/40'}`}
         >
           <svg className="w-6 h-6" fill={isSaved ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
@@ -39,7 +39,7 @@ const JobDetail: React.FC<JobDetailProps> = ({ job, isApplied, isSaved, onClose,
         <div className="flex justify-between items-center mb-6">
             <div className="bg-slate-900 px-4 py-2 rounded-xl text-center flex-1 mr-2 border border-slate-800">
                 <p className="text-[10px] text-slate-500 uppercase font-bold tracking-tight">Salário</p>
-                <p className="text-emerald-400 font-bold">{job.salary}</p>
+                <p className="text-green-400 font-bold">{job.salary}</p>
             </div>
             <div className="bg-slate-900 px-4 py-2 rounded-xl text-center flex-1 mx-2 border border-slate-800">
                 <p className="text-[10px] text-slate-500 uppercase font-bold tracking-tight">Turno</p>
@@ -63,7 +63,7 @@ const JobDetail: React.FC<JobDetailProps> = ({ job, isApplied, isSaved, onClose,
           <ul className="space-y-2">
             {job.requirements.map((req, i) => (
               <li key={i} className="flex items-center gap-2 text-sm text-slate-400">
-                <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
                 {req}
               </li>
             ))}
@@ -73,7 +73,7 @@ const JobDetail: React.FC<JobDetailProps> = ({ job, isApplied, isSaved, onClose,
         <section className="mb-6">
             <h3 className="font-bold text-slate-100 mb-2">Localização</h3>
             <div className="p-3 bg-slate-900 rounded-lg flex items-center gap-3 border border-slate-800">
-                <svg className="w-5 h-5 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 <p className="text-xs text-slate-400 font-medium">{job.location.address}</p>
             </div>
         </section>
@@ -81,14 +81,14 @@ const JobDetail: React.FC<JobDetailProps> = ({ job, isApplied, isSaved, onClose,
 
       <div className="absolute bottom-0 left-0 right-0 p-6 bg-slate-950 border-t border-slate-900 flex gap-4">
         {isApplied ? (
-          <div className="flex-1 bg-emerald-900/20 text-emerald-400 font-bold py-4 rounded-2xl flex items-center justify-center gap-2 border border-emerald-900/30">
+          <div className="flex-1 bg-green-900/20 text-green-400 font-bold py-4 rounded-2xl flex items-center justify-center gap-2 border border-green-900/30">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
             Candidatura Enviada
           </div>
         ) : (
           <button 
             onClick={onApply}
-            className="flex-1 bg-sky-600 text-white font-bold py-4 rounded-2xl shadow-lg shadow-sky-950 active:scale-[0.98] transition-all"
+            className="flex-1 bg-blue-600 text-white font-bold py-4 rounded-2xl shadow-lg shadow-blue-950 active:scale-[0.98] transition-all"
           >
             Candidatar-se Agora
           </button>
