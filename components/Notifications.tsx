@@ -40,13 +40,13 @@ const Notifications: React.FC<NotificationsProps> = ({ notifications, onBack, on
               className={`p-4 rounded-2xl border transition-all cursor-pointer relative ${notif.read ? 'bg-slate-900/40 border-slate-900' : 'bg-slate-900 border-slate-800 shadow-lg'}`}
             >
               {!notif.read && (
-                <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-sky-500"></div>
+                <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
               )}
               <div className="flex gap-4">
                 <div className={`h-10 w-10 rounded-xl flex items-center justify-center shrink-0 ${
-                  notif.type === 'job_alert' ? 'bg-sky-900/20 text-sky-500' : 
+                  notif.type === 'job_alert' ? 'bg-amber-900/20 text-amber-500' : 
                   notif.type === 'application_received' ? 'bg-emerald-900/20 text-emerald-500' : 
-                  'bg-amber-900/20 text-amber-500'
+                  'bg-blue-900/20 text-blue-500'
                 }`}>
                   {notif.type === 'job_alert' && <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>}
                   {notif.type === 'application_received' && <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>}

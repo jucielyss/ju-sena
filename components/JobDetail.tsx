@@ -23,7 +23,7 @@ const JobDetail: React.FC<JobDetailProps> = ({ job, isApplied, isSaved, onClose,
         </button>
         <button 
           onClick={onToggleSave}
-          className={`absolute top-6 right-4 p-2 rounded-full backdrop-blur-md transition-all ${isSaved ? 'bg-green-600 text-white' : 'bg-black/20 text-white active:bg-black/40'}`}
+          className={`absolute top-6 right-4 p-2 rounded-full backdrop-blur-md transition-all ${isSaved ? 'bg-amber-500 text-white shadow-lg' : 'bg-black/20 text-white active:bg-black/40'}`}
         >
           <svg className="w-6 h-6" fill={isSaved ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
@@ -93,8 +93,8 @@ const JobDetail: React.FC<JobDetailProps> = ({ job, isApplied, isSaved, onClose,
             Candidatar-se Agora
           </button>
         )}
-        <button className="h-14 w-14 border-2 border-slate-900 rounded-2xl flex items-center justify-center text-slate-600 active:bg-slate-900">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+        <button className="h-14 w-14 border-2 border-slate-900 rounded-2xl flex items-center justify-center text-slate-600 active:bg-slate-900 active:text-amber-500 transition-colors" onClick={onToggleSave}>
+          <svg className={`w-6 h-6 ${isSaved ? 'text-amber-500 fill-current' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
         </button>
       </div>
     </div>

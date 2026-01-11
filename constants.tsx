@@ -5,6 +5,7 @@ import { Job } from './types';
 export const COLORS = {
   primary: '#2563eb',   // Azul 600
   secondary: '#16a34a', // Verde 600
+  warning: '#f59e0b',   // Amarelo/Amber 500
   accent: '#475569',    // Cinza 600 (Slate)
   background: '#020617' // Cinza 950 (Slate)
 };

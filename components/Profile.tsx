@@ -121,7 +121,7 @@ const Profile: React.FC<ProfileProps> = ({ role, stats, onRoleSwitch, onLogout }
             </div>
             <div className="flex-1 bg-slate-900 rounded-2xl py-4 text-center border border-slate-800 shadow-sm">
                 <p className="text-[10px] text-slate-600 font-bold uppercase tracking-wider mb-1">Salvas</p>
-                <p className="text-2xl font-black text-green-500">{stats.saved}</p>
+                <p className="text-2xl font-black text-amber-500">{stats.saved}</p>
             </div>
         </div>
 
@@ -187,43 +187,6 @@ const Profile: React.FC<ProfileProps> = ({ role, stats, onRoleSwitch, onLogout }
                   onChange={e => setProfile({...profile, phone: e.target.value})}
                   className="w-full bg-slate-900 border border-slate-800 rounded-2xl py-3 px-4 text-white focus:ring-2 focus:ring-blue-500 outline-none"
                 />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="space-y-4">
-          <h2 className="text-sm font-bold text-slate-600 uppercase tracking-widest">Habilidades</h2>
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-5 space-y-6">
-            <div className="flex flex-wrap gap-2">
-              {profile.skills.map(skill => (
-                <span key={skill} className="bg-slate-800 text-slate-200 px-3 py-1.5 rounded-full text-xs font-medium border border-slate-700 flex items-center gap-2">
-                  {skill}
-                </span>
-              ))}
-            </div>
-
-            <div>
-              <label className="text-[10px] font-bold text-slate-500 uppercase mb-3 block">Disponibilidade</label>
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { id: 'morning', label: 'Manhã' },
-                  { id: 'afternoon', label: 'Tarde' },
-                  { id: 'night', label: 'Noite' },
-                  { id: 'full', label: 'Integral' }
-                ].map(shift => (
-                  <button 
-                    key={shift.id}
-                    onClick={() => {
-                      const current = profile.shiftAvailability;
-                      const next = current.includes(shift.id) ? current.filter(x => x !== shift.id) : [...current, shift.id];
-                      setProfile({...profile, shiftAvailability: next});
-                    }}
-                    className={`p-3 rounded-xl text-xs font-bold transition-all border ${profile.shiftAvailability.includes(shift.id) ? 'bg-blue-600/20 text-blue-400 border-blue-500' : 'bg-slate-950 text-slate-600 border-slate-800'}`}
-                  >
-                    {shift.label}
-                  </button>
-                ))}
               </div>
             </div>
           </div>
